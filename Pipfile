@@ -1,0 +1,26 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[[source]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+verify_ssl = true
+name = "mirrorsaliyun"
+
+[[source]]
+url = "https://mirrors.aliyun.com/pipy/simple"
+verify_ssl = true
+name = "mirrorsaliyun-860"
+
+[packages]
+requests = {version = "*", index = "mirrorsaliyun"}
+pandas = {version = "*", index = "mirrorsaliyun-860"}
+dataframe-image = {version = "*", index = "mirrorsaliyun-860"}
+openpyxl = {version = "*", index = "mirrorsaliyun-860"}
+python-dotenv = {version = "*", index = "mirrorsaliyun"}
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
