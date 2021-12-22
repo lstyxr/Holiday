@@ -9,12 +9,6 @@ import holiday
 import xls2JPG
 
 def send_enclosure():
-    # 1.发件人、授权码，收件人信息
-    # me = "526560086@qq.com"
-    # pwd = 'uwsdaesunvmybjjh'
-    # to = ['luosongtao0370@dingtalk.com', 'nfl3336@dingtalk.com', 'liumingjiang6633@dingtalk.com', 'rxz7665@dingtalk.com']
-    # to = ['luosongtao0370@dingtalk.com', 'rxz7665@dingtalk.com']
-
     # 获取环境变量
     me = os.getenv("me")
     pwd = os.getenv("pwd")
