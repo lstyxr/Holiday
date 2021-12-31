@@ -5,8 +5,16 @@ from email.mime.application import MIMEApplication
 from dotenv import load_dotenv
 load_dotenv()
 import os
-import holiday
+import holidaylongtime
 import xls2JPG
+import pandas as pd
+
+# 判断有无人员请假
+df = pd.read_excel("请假情况.xlsx")
+if df.empty:
+    tip = "本周无人请假，暂无因公外出人员。"
+else:
+    tip = "本周请假人员情况，暂无因公外出人员，详见附件。"
 
 def send_enclosure():
     # 获取环境变量
@@ -16,7 +24,7 @@ def send_enclosure():
     
     # 2.创建实例对象，设置主题等信息，
     msg = MIMEMultipart()
-    msg["Subject"] = "本周请假人员情况，详见附件。"
+    msg["Subject"] = tip
     msg["From"] = me
     msg["To"] = ','.join(to)
     
