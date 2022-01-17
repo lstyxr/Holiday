@@ -1,6 +1,7 @@
 import pandas as pd
 import dataframe_image as dfi
 import datetime
+import xlsxwriter
 
 dfs = pd.read_excel("file.xlsx", sheet_name = None).values()
 df = pd.concat(dfs)
@@ -16,7 +17,7 @@ result.reset_index(inplace=True)
 result.drop("index", axis=1, inplace=True)
 result.index = result.index + 1  # 设置索引号从 1 开始
 
-result.to_excel("请假情况.xlsx", index=True)
+result.to_excel("请假情况.xlsx", index=True, encoding='xlsxwriter')
 result.to_html("html.html")
 
 dfi.export(obj=result, filename='请假情况.jpg', fontsize=30)

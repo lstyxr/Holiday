@@ -19,6 +19,7 @@ pandas = {version = "*", index = "mirrorsaliyun-860"}
 dataframe-image = {version = "*", index = "mirrorsaliyun-860"}
 openpyxl = {version = "*", index = "mirrorsaliyun-860"}
 python-dotenv = {version = "*", index = "mirrorsaliyun"}
+xlsxwriter = "*"
 
 [dev-packages]
 
